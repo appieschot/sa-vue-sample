@@ -1,24 +1,39 @@
 {
-  "auth": {
-    "identityProviders": {
-      "customOpenIdConnectProviders": {
-        "aadb2c": {
-           "registration": {
-            "clientIdSettingName": "AADB2C_PROVIDER_CLIENT_ID",
-            "clientCredential": {
-              "clientSecretSettingName": "AADB2C_PROVIDER_CLIENT_SECRET"
-            },
-            "openIdConnectConfiguration": {
-              "wellKnownOpenIdConfiguration": "https://digiwijsdemo.b2clogin.com/digiwijsdemo.onmicrosoft.com/b2c_1_susi/v2.0/.well-known/openid-configuration"
-            }
-          },
-          "login": {
-            "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
-            "scopes": [],
-            "loginParameterNames": []
-       }
-        }
-      }
-    }
-  }
+	"routes": [{
+			"route": "/admin/*",
+			"allowedRoles": [
+				"authenticated"
+			]
+		},
+		{
+			"route": "/login",
+			"rewrite": "/.auth/login/aadb2c"
+		},
+		{
+			"route": "/logout",
+			"redirect": "/.auth/logout"
+		}
+	],
+	"auth": {
+		"identityProviders": {
+			"customOpenIdConnectProviders": {
+				"aadb2c": {
+					"registration": {
+						"clientIdSettingName": "AADB2C_PROVIDER_CLIENT_ID",
+						"clientCredential": {
+							"clientSecretSettingName": "AADB2C_PROVIDER_CLIENT_SECRET"
+						},
+						"openIdConnectConfiguration": {
+							"wellKnownOpenIdConfiguration": "https://digiwijsdemo.b2clogin.com/digiwijsdemo.onmicrosoft.com/b2c_1_susi/v2.0/.well-known/openid-configuration"
+						}
+					},
+					"login": {
+						"nameClaimType": "emails",
+						"scopes": ["openid"],
+						"loginParameterNames": []
+					}
+				}
+			}
+		}
+	}
 }
