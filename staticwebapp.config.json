@@ -3,10 +3,10 @@
     "identityProviders": {
       "customOpenIdConnectProviders": {
         "aadb2c": {
-          "registration": {
-            "clientIdSettingName": "b668e584-20de-4f6c-a39a-b022fd8271be",
+           "registration": {
+            "clientIdSettingName": "AADB2C_PROVIDER_CLIENT_ID",
             "clientCredential": {
-              "clientSecretSettingName": "b668e584-20de-4f6c-a39a-b022fd8271be"
+              "clientSecretSettingName": "AADB2C_PROVIDER_CLIENT_SECRET"
             },
             "openIdConnectConfiguration": {
               "wellKnownOpenIdConfiguration": "https://digiwijsdemo.b2clogin.com/digiwijsdemo.onmicrosoft.com/B2C_1_DemoAccouunts/v2.0/.well-known/openid-configuration"
@@ -20,5 +20,8 @@
         }
       }
     }
-  }
+  },
+  "navigationFallback": {
+        "rewrite": "/index.html"
+    }
 }
