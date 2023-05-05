@@ -9,7 +9,7 @@
               "clientSecretSettingName": "AADB2C_PROVIDER_CLIENT_SECRET"
             },
             "openIdConnectConfiguration": {
-              "wellKnownOpenIdConfiguration": "https://digiwijsdemo.b2clogin.com/digiwijsdemo.onmicrosoft.com/B2C_1_DemoAccouunts/v2.0/.well-known/openid-configuration"
+              "wellKnownOpenIdConfiguration": "https://digiwijsdemo.b2clogin.com/digiwijsdemo.onmicrosoft.com/B2C_1_susi/v2.0/.well-known/openid-configuration"
             }
           },
           "login": {
