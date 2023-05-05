@@ -20,8 +20,5 @@
         }
       }
     }
-  },
-  "navigationFallback": {
-        "rewrite": "/index.html"
-    }
+  }
 }
